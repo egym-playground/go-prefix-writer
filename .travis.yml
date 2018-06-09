@@ -1,0 +1,9 @@
+language: go
+go:
+  - "1.10.x"
+script:
+  - cd prefixer
+  - go get -v ./...
+  - test -n $(gofmt -l .)
+  - go test -cover -race ./...
+  - go build
